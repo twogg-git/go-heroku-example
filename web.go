@@ -13,22 +13,6 @@ import (
 	"os"
 )
 
-func main() {
-	http.HandleFunc("/", hello)
-	fmt.Println("listening...")
-	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
-	if err != nil {
-		panic(err)
-	}
-}
-
-func hello(res http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(res, "hello, heroku")
-  	fmt.Fprintln(res, "Runing JSON")
-  	runJson(res, req)
-	fmt.Fprintln(res, "It works?")  
-}
-
 // We'll use these two structs to demonstrate encoding and
 // decoding of custom types below.
 type Response1 struct {
@@ -40,7 +24,19 @@ type Response2 struct {
     Fruits []string `json:"fruits"`
 }
 
-func runJson(res http.ResponseWriter, req *http.Request) {
+func main() {
+	http.HandleFunc("/", hello)
+	fmt.Println("listening...")
+	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func hello(res http.ResponseWriter, req *http.Request) {
+	
+  	fmt.Fprintln(res, "hello, heroku")
+  	fmt.Fprintln(res, "Runing JSON")
 
     // First we'll look at encoding basic data types to
     // JSON strings. Here are some examples for atomic
@@ -146,4 +142,7 @@ func runJson(res http.ResponseWriter, req *http.Request) {
     enc := json.NewEncoder(os.Stdout)
     d := map[string]int{"apple": 5, "lettuce": 7}
     enc.Encode(d)
+  
+  	fmt.Fprintln(res, "It works?")  
+
 }
