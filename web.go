@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+  	"time"
 )
 
 // We'll use these two structs to demonstrate encoding and
@@ -35,6 +36,9 @@ func hello(res http.ResponseWriter, req *http.Request) {
 	
   	fmt.Fprintln(res, "hello, heroku")
   	fmt.Fprintln(res, "Runing JSON")
+  
+  	now := time.Now()
+  	fmt.Fprintln(res, now)
 
    // First we'll look at encoding basic data types to
     // JSON strings. Here are some examples for atomic
