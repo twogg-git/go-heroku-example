@@ -81,15 +81,6 @@ func hello(res http.ResponseWriter, req *http.Request) {
     res2B, _ := json.Marshal(res2D)
     fmt.Println(string(res2B))
 
-
-
-    // of such tags.
-    res2D := &Response2{
-        Page:   1,
-        Fruits: []string{"apple", "peach", "pear"}}
-    res2B, _ := json.Marshal(res2D)
-    fmt.Println(string(res2B))
-
     // Now let's look at decoding JSON data into Go
     // values. Here's an example for a generic data
     // structure.
