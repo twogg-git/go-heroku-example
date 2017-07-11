@@ -119,11 +119,11 @@ func hello(res http.ResponseWriter, req *http.Request) {
     // type-safety to our programs and eliminating the
     // need for type assertions when accessing the decoded
     // data.
-    //str := `{"page": 1, "fruits": ["apple", "peach"]}`
+    str := []string{`{"page": 1, "fruits": ["apple", "peach"]}`}
     //res := Response2{}
     //json.Unmarshal([]byte(str), &res)
-    //fmt.Println(res)
-    //fmt.Println(res.Fruits[0])
+    fmt.Fprintln(res)
+    fmt.Fprintln(res, res.Fruits[0])
 
     // In the examples above we always used bytes and
     // strings as intermediates between the data and
@@ -135,9 +135,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
     //enc.Encode(d)
   
   
-  
-  	fmt.Fprintln(res, "It works?")  
-  
-  fmt.Fprintln(res, "Yes it's alive!!!")
+  	fmt.Fprintln(res, "It works?")   
+ 	fmt.Fprintln(res, "Yes it's alive!!!")
 
 }
