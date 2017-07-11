@@ -119,21 +119,20 @@ func hello(res http.ResponseWriter, req *http.Request) {
     // type-safety to our programs and eliminating the
     // need for type assertions when accessing the decoded
     // data.
-    str := `{"page": 1, "fruits": ["apple", "peach"]}`
+    //str := `{"page": 1, "fruits": ["apple", "peach"]}`
     //res := Response2{}
-    json.Unmarshal([]byte(str), &res)
-    fmt.Fprintln(res)
-    fmt.Fprintln(res, res.Fruits[0])
+    //json.Unmarshal([]byte(str), &res)
+    //fmt.Fprintln(res)
+    //fmt.Fprintln(res, res.Fruits[0])
 
     // In the examples above we always used bytes and
     // strings as intermediates between the data and
     // JSON representation on standard out. We can also
     // stream JSON encodings directly to `os.Writer`s like
     // `os.Stdout` or even HTTP response bodies.
-    //enc := json.NewEncoder(os.Stdout)
-    //d := map[string]int{"apple": 5, "lettuce": 7}
-    //enc.Encode(d)
-  
+    enc := json.NewEncoder(os.Stdout)
+    d := map[string]int{"apple": 5, "lettuce": 7}
+    enc.Encode(d)
   
   	fmt.Fprintln(res, "It works?")   
  	fmt.Fprintln(res, "Yes it's alive!!!")
