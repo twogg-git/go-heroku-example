@@ -119,9 +119,9 @@ func hello(res http.ResponseWriter, req *http.Request) {
     // type-safety to our programs and eliminating the
     // need for type assertions when accessing the decoded
     // data.
-    str := []string{`{"page": 1, "fruits": ["apple", "peach"]}`}
+    str := `{"page": 1, "fruits": ["apple", "peach"]}`
     //res := Response2{}
-    //json.Unmarshal([]byte(str), &res)
+    json.Unmarshal([]byte(str), &res)
     fmt.Fprintln(res)
     fmt.Fprintln(res, res.Fruits[0])
 
