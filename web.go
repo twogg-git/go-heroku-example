@@ -36,7 +36,6 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	fmt.Fprintln(res, "hello, heroku")
   	fmt.Fprintln(res, "Runing JSON")
 
-  
    // First we'll look at encoding basic data types to
     // JSON strings. Here are some examples for atomic
     // values.
@@ -47,20 +46,20 @@ func hello(res http.ResponseWriter, req *http.Request) {
     fmt.Fprintln(res, string(intB))
 
     fltB, _ := json.Marshal(2.34)
-    fmt.Println(string(fltB))
+    fmt.Fprintln(res, string(fltB))
 
     strB, _ := json.Marshal("gopher")
-    fmt.Println(string(strB))
+    fmt.Fprintln(res, string(strB))
 
     // And here are some for slices and maps, which encode
     // to JSON arrays and objects as you'd expect.
     slcD := []string{"apple", "peach", "pear"}
     slcB, _ := json.Marshal(slcD)
-    fmt.Println(string(slcB))
+    fmt.Fprintln(res, string(slcB))
 
     mapD := map[string]int{"apple": 5, "lettuce": 7}
     mapB, _ := json.Marshal(mapD)
-    fmt.Println(string(mapB))
+    fmt.Fprintln(res, string(mapB))
 
     // The JSON package can automatically encode your
     // custom data types. It will only include exported
@@ -70,7 +69,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
         Page:   1,
         Fruits: []string{"apple", "peach", "pear"}}
     res1B, _ := json.Marshal(res1D)
-    fmt.Println(string(res1B))
+    fmt.Fprintln(res, string(res1B))
   
 
   
@@ -82,7 +81,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
         Page:   1,
         Fruits: []string{"apple", "peach", "pear"}}
     res2B, _ := json.Marshal(res2D)
-    fmt.Println(string(res2B))
+    fmt.Fprintln(res, string(res2B))
 
     // Now let's look at decoding JSON data into Go
     // values. Here's an example for a generic data
@@ -100,20 +99,20 @@ func hello(res http.ResponseWriter, req *http.Request) {
     if err := json.Unmarshal(byt, &dat); err != nil {
         panic(err)
     }
-    fmt.Println(dat)
+    fmt.Fprintln(res, dat)
 
     // In order to use the values in the decoded map,
     // we'll need to cast them to their appropriate type.
     // For example here we cast the value in `num` to
     // the expected `float64` type.
     num := dat["num"].(float64)
-    fmt.Println(num)
+    fmt.Fprintln(res, num)
 
     // Accessing nested data requires a series of
     // casts.
     strs := dat["strs"].([]interface{})
     str1 := strs[0].(string)
-    fmt.Println(str1)
+    fmt.Fprintln(res, str1)
 
     // We can also decode JSON into custom data types.
     // This has the advantages of adding additional
