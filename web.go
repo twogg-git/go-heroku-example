@@ -36,7 +36,8 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	fmt.Fprintln(res, "hello, heroku")
   	fmt.Fprintln(res, "Runing JSON")
 
-    // First we'll look at encoding basic data types to
+  
+   // First we'll look at encoding basic data types to
     // JSON strings. Here are some examples for atomic
     // values.
     bolB, _ := json.Marshal(true)
@@ -46,7 +47,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
     fmt.Fprintln(res, string(intB))
 
     fltB, _ := json.Marshal(2.34)
-    fmt.Fprintln(res, string(fltB))
+    fmt.Println(string(fltB))
 
     strB, _ := json.Marshal("gopher")
     fmt.Println(string(strB))
@@ -70,8 +71,10 @@ func hello(res http.ResponseWriter, req *http.Request) {
         Fruits: []string{"apple", "peach", "pear"}}
     res1B, _ := json.Marshal(res1D)
     fmt.Println(string(res1B))
+  
 
-    // You can use tags on struct field declarations
+  
+  	// You can use tags on struct field declarations
     // to customize the encoded JSON key names. Check the
     // definition of `Response2` above to see an example
     // of such tags.
@@ -131,6 +134,8 @@ func hello(res http.ResponseWriter, req *http.Request) {
     enc := json.NewEncoder(os.Stdout)
     d := map[string]int{"apple": 5, "lettuce": 7}
     enc.Encode(d)
+  
+  
   
   	fmt.Fprintln(res, "It works?")  
 
