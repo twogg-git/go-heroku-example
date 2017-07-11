@@ -137,5 +137,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
   
   
   	fmt.Fprintln(res, "It works?")  
+  
+  fmt.Fprintln(res, "Yes it's alive!!!")
 
 }
