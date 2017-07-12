@@ -54,7 +54,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
       	fmt.Fprintln(res, msg)
   	}*/
   
-  	msg string = "Testing " + string(poolSize) + " randLimit " + string(randLimit)
+  	msg := "Testing " + string(poolSize) + " randLimit " + string(randLimit)
   	fmt.Fprintln(res, msg)
   
   	fmt.Fprintln(res, dataPool2[0])
