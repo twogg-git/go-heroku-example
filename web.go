@@ -45,7 +45,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	var dataPool2 [150]int
   	for i:= 0; i < len(dataPool2); i++ {
       	dataPool2[i] = rand.Intn(150)
-      fmt.Fprintln(res, "Rand ", randInt.Intn(150) )
+      	fmt.Fprintln(res, " "+ i + " rand " + rand.Intn(150) + " dataPool "+ dataPool2[i] )
   	}
   
   	fmt.Fprintln(res, "Datapool size", len(dataPool2))
