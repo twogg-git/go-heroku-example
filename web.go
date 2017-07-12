@@ -53,7 +53,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
       	fmt.Fprintln(res, dataPool[i])
   	}
   	
-  	fmt.Fprintln(res, "Pool size:)
+  	fmt.Fprintln(res, "Pool size")
   	fmt.Fprintln(res, poolSize)
     fmt.Fprintln(res, "Random number limit")             
   	fmt.Fprintln(res, randLimit)
