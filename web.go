@@ -48,14 +48,15 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	dataPool2[0] = 150
   	dataPool2[1] = 152
   	dataPool2[2] = rand.Intn(randLimit)
-  	/*for i:= 0; i < poolSize; i++ {
-      	dataPool2[i] = int(rand.Intn(randLimit))
-      	msg := string(i) + " : " + string(rand.Intn(randLimit)) + " > " + string(dataPool2[i]) 
-      	fmt.Fprintln(res, msg)
-  	}*/
-  
-  	msg := "Testing " + string(poolSize) + " randLimit " + string(randLimit)
-  	fmt.Fprintln(res, msg)
+  	for i:= 0; i < poolSize; i++ {
+      	dataPool2[i] = rand.Intn(randLimit)
+      	fmt.Fprintln(res, dataPool[i])
+  	}
+  	
+  	fmt.Fprintln(res, "Pool size:)
+  	fmt.Fprintln(res, poolSize)
+    fmt.Fprintln(res, "Random number limit")             
+  	fmt.Fprintln(res, randLimit)
   
   	fmt.Fprintln(res, dataPool2[0])
   	fmt.Fprintln(res, dataPool2[1])
