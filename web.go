@@ -63,9 +63,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
   
   	fmt.Fprintln(res, "Datapool size", len(dataPool2))
   	for data := range dataPool2 {
-      if data != nil {
       	fmt.Fprintln(res, data)
-      }
   	} 
   
  	fmt.Fprintln(res, "Yes it's alive!!!")
