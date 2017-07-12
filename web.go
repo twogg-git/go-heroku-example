@@ -43,8 +43,8 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	fmt.Fprintln(res, "Adding data into the pool")
   	var dataPool2 [250]int
   	for i:= 0; i < len(dataPool2); i++ {
-      	dataPool2[i] = rand.Intn(150)
-      	var msg string = i + " rand " + rand.Intn(150) + " dataPool "+ dataPool2[i] 
+      	dataPool2[i] := rand.Intn(150)
+      	msg := i + " rand " + rand.Intn(150) + " dataPool "+ dataPool2[i] 
       	fmt.Fprintln(res, msg)
   	}
   
