@@ -42,9 +42,9 @@ func hello(res http.ResponseWriter, req *http.Request) {
 
     dataPool := [5]int{1, 2, 3, 4, 5}
   	fmt.Fprintln(res, len(dataPool))
-  	fmt.Print(rand.Intn(100), ",")
+  	fmt.Fprint(res, rand.Intn(100))
   
-  	var dataPool2 = [150]int
+  	var dataPool2 [150]int
   	dataPool2[0] = rand.Intn(100)
   	dataPool2[1] = rand.Intn(100)
   	
