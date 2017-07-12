@@ -50,7 +50,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	dataPool2[2] = rand.Intn(randLimit)
   	for i:= 0; i < poolSize; i++ {
       	dataPool2[i] = rand.Intn(randLimit)
-      	fmt.Fprintln(res, dataPool[i])
+      	fmt.Fprintln(res, dataPool2[i])
   	}
   	
   	fmt.Fprintln(res, "Pool size")
