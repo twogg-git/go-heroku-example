@@ -48,7 +48,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	}
   
   	fmt.Fprintln(res, "Datapool size", len(dataPool2))
-  	for i, data := range dataPool2 {
+  	for data := range dataPool2 {
       fmt.Fprintln(res, data)
   	} 
   
