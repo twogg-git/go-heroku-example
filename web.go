@@ -10,7 +10,6 @@ import (
 	"net/http"
 	"os"
   	"time"
-    "github.com/gonum/stat"
 )
 
 // We'll use these two structs to demonstrate encoding and
@@ -42,7 +41,12 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	fmt.Fprintln(res, now)
 
     dataPool := [5]int{1, 2, 3, 4, 5}
-  	fmt.Fprintln(res, len(dataPool) )   
+  	fmt.Fprintln(res, len(dataPool))
+  
+  	fmr.Fprintln(res, "Datapool")
+  	for i := range dataPool {
+      fmt.Fprintln(res, i)
+  	} 
   
  	fmt.Fprintln(res, "Yes it's alive!!!")
 
