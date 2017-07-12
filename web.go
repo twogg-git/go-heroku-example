@@ -41,10 +41,12 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	fmt.Fprintln(res, len(dataPool))
   
   	fmt.Fprintln(res, "Adding data into the pool")
-  	var dataPool2 [250]int
-  	for i:= 0; i < len(dataPool2); i++ {
-      	dataPool2[i] = int(rand.Intn(150))
-      msg := string(i) + " : " + string(rand.Intn(150)) + " > " + string(dataPool2[i]) 
+  	poolSize := 100
+  	randLimit := 250
+  	var dataPool2 [poolSize]int
+  	for i:= 0; i < poolSize; i++ {
+      	dataPool2[i] = int(rand.Intn(randLimit))
+      	msg := string(i) + " : " + string(rand.Intn(randLimit)) + " > " + string(dataPool2[i]) 
       	fmt.Fprintln(res, msg)
   	}
   
