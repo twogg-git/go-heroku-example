@@ -34,24 +34,22 @@ func main() {
 
 func hello(res http.ResponseWriter, req *http.Request) {
 	
-  	fmt.Fprintln(res, "hello, heroku")
-  	fmt.Fprintln(res, "Runing JSON")
+  	fmt.Fprintln(res, "Hello, datapool testing")
   
   	now := time.Now()
   	fmt.Fprintln(res, now)
 
     dataPool := [5]int{1, 2, 3, 4, 5}
   	fmt.Fprintln(res, len(dataPool))
-  	fmt.Fprint(res, rand.Intn(100))
   
   	var dataPool2 [150]int
-  	dataPool2[0] = rand.Intn(100)
-  	dataPool2[1] = rand.Intn(100)
-  	
+  	for i:= 0; i < len(dataPool2); i++ {
+      	dataPool2[i] = rand.Intn(100) 
+  	}
   
-  	fmt.Fprintln(res, "Datapool")
-  	for i := range dataPool2 {
-      fmt.Fprintln(res, i)
+  	fmt.Fprintln(res, "Datapool size", len(dataPool2))
+  	for i, data := range dataPool2 {
+      fmt.Fprintln(res, data)
   	} 
   
  	fmt.Fprintln(res, "Yes it's alive!!!")
