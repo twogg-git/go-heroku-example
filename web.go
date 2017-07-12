@@ -41,8 +41,8 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	fmt.Fprintln(res, len(dataPool))
   
   	fmt.Fprintln(res, "Adding data into the pool")
-  	const poolSize := 100
-  	const randLimit := 250
+  	const poolSize int = 100
+  	const randLimit int = 250
   	var dataPool2 [poolSize]int
   	for i:= 0; i < poolSize; i++ {
       	dataPool2[i] = int(rand.Intn(randLimit))
