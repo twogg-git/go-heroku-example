@@ -44,7 +44,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	fmt.Fprintln(res, len(dataPool))
   	fmt.Print(rand.Intn(100), ",")
   
-  	dataPool2 := [150]int
+  	var dataPool2 = [150]int
   	dataPool2[0] = rand.Intn(100)
   	dataPool2[1] = rand.Intn(100)
   	
