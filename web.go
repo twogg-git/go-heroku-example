@@ -44,11 +44,20 @@ func hello(res http.ResponseWriter, req *http.Request) {
   	const poolSize int = 100
   	const randLimit int = 250
   	var dataPool2 [poolSize]int
-  	for i:= 0; i < poolSize; i++ {
+  
+  	dataPool2[0] = 150
+  	dataPool2[1] = 152
+  	/*for i:= 0; i < poolSize; i++ {
       	dataPool2[i] = int(rand.Intn(randLimit))
       	msg := string(i) + " : " + string(rand.Intn(randLimit)) + " > " + string(dataPool2[i]) 
       	fmt.Fprintln(res, msg)
-  	}
+  	}*/
+  
+  	msg := "Testing "+poolSize + " randLimit "+randLimit
+  	fmt.Fprintln(res, msg)
+  
+  	fmt.Fprintln(res, dataPool2[0])
+  	fmt.Fprintln(res, dataPool2[1])
   
   	fmt.Fprintln(res, "Datapool size", len(dataPool2))
   	for data := range dataPool2 {
