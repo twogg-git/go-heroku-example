@@ -12,8 +12,6 @@ import (
 	"math/rand"
 )
 
-// We'll use these two structs to demonstrate encoding and
-// decoding of custom types below.
 type Response1 struct {
     Page   int
     Fruits []string
