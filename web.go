@@ -42,7 +42,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
     dataPool := [5]int{1, 2, 3, 4, 5}
   	fmt.Fprintln(res, len(dataPool))
   
-  	fmr.Fprintln(res, "Datapool")
+  	fmt.Fprintln(res, "Datapool")
   	for i := range dataPool {
       fmt.Fprintln(res, i)
   	} 
