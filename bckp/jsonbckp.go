@@ -10,7 +10,6 @@ import (
 	"net/http"
 	"os"
   	"time"
-    "github.com/gonum/stat"
 )
 
 // We'll use these two structs to demonstrate encoding and
