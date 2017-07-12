@@ -54,7 +54,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
       	fmt.Fprintln(res, msg)
   	}*/
   
-  	var msg string = "Testing "+string(poolSize) + " randLimit "+string(randLimit)
+  	var msg string = "Testing ", poolSize, " randLimit ", randLimit
   	fmt.Fprintln(res, msg)
   
   	fmt.Fprintln(res, dataPool2[0])
@@ -62,8 +62,8 @@ func hello(res http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(res, dataPool2[2])
   
   	fmt.Fprintln(res, "Datapool size", len(dataPool2))
-  	for data := range dataPool2 {
-      	fmt.Fprintln(res, data)
+  	for i:=0; i < len(dataPool2); i++ {
+      	fmt.Fprintln(res, dataPool2[i])
   	} 
   
  	fmt.Fprintln(res, "Yes it's alive!!!")
