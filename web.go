@@ -10,8 +10,8 @@ import (
 	"os"
   	"time"
 	"math/rand"
-  	"github.com/gonum/stat"	
-  	"github.com/montanaflynn/stats"
+  	//"github.com/gonum/stat"	
+  	//"github.com/montanaflynn/stats"
 )
 
 type Response1 struct {
@@ -55,12 +55,12 @@ func hello(res http.ResponseWriter, req *http.Request) {
 
   	fmt.Fprintln(res, "Datapool size", len(dataPool2))
   	
-  	media := stats.Median(dataPool2)	
-  	fmt.Fprintln(res, "Median")
-  	fmt.Fprintln(res, media)
+  	//media := stats.Median(dataPool2)	
+  	//fmt.Fprintln(res, "Median")
+  	//fmt.Fprintln(res, media)
   
-  	media = stats.Median(dataPool2)
-  	fmt.Fprintln(res, media)
+  	//media = stats.Median(dataPool2)
+  	//fmt.Fprintln(res, media)
   
   	for i:=0; i < len(dataPool2); i++ {
       	fmt.Fprintln(res, dataPool2[i])

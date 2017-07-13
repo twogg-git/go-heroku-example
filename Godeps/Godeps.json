@@ -5,11 +5,5 @@
 		"./..."
 	],
 	"Deps": [
-     	{
-         	"ImportPath" : "github.com/gonum/stat"
-        },
-      	{
-          	"ImportPath" : "github.com/montanaflynn/stats"
-        }
     ]
 }
